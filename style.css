@@ -1,0 +1,209 @@
+:root {
+  --primary: #4f46e5;
+  --radius: 16px;
+}
+
+/* =========================
+   BASE GLOBALE RESPONSIVE
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f5f5f5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Titres responsives */
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================
+   ACCUEIL
+========================= */
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.activity-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;          /* espace image-activité */
+  padding: 12px;      /* espace interne */
+  border: none;
+  border-radius: var(--radius);
+  background: white;
+  cursor: pointer;
+  font-size: clamp(0.95rem, 4vw, 1rem);
+}
+
+.activity-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+}
+
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#home h1 {
+  flex-shrink: 0; /* le titre ne rétrécit pas */
+  margin-bottom: 12px; /* Espace sous titre */
+}
+
+.home-scroll {
+  flex: 1;              /* prend tout l’espace restant */
+  overflow-y: auto;     /* scroll uniquement ici */
+  padding-bottom: 20px;
+}
+
+/* scroll fluide sur mobile */
+.home-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================
+   ACTIVITÉ (CENTRAGE TOTAL)
+========================= */
+
+/* Conteneur activité centré verticalement */
+#activity {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Espace entre titre et carte */
+.activity-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;        /* centrage vertical */
+  justify-content: center;    /* centrage horizontal */
+  position: relative;
+  gap: 20px;
+  flex-direction: row-reverse; /* icône refresh à droite */
+}
+
+/* =========================
+   CARTE RESPONSIVE
+========================= */
+
+.card-container {
+  position: relative;
+}
+
+.card {
+  width: min(80vw, 240px);   /* responsive largeur */
+  height: min(65vh, 320px);  /* responsive hauteur */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  text-align: center;
+
+  font-size: clamp(1rem, 4vw, 1.2rem);
+}
+
+.card p {
+  line-height: 1.5; /* interligne amélioré */
+}
+
+/* =========================
+   TEXTE DYNAMIQUE
+========================= */
+
+.highlight {
+  font-weight: bold;
+  color: #1a3d6d; /* bleu foncé */
+}
+
+.small-text {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.85em;
+  font-style: italic;
+  color: #555;
+}
+
+/* =========================
+   BOUTON REFRESH
+========================= */
+
+#refresh {
+  position: absolute;
+  top: 50%;
+  right: -48px;              /* distance par rapport à la carte */
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+/* =========================
+   BOUTON TERMINÉ
+========================= */
+
+#finish {
+  align-self: center;
+  margin: 20px 0 40px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  background: black;
+  color: white;
+  font-size: clamp(0.95rem, 4vw, 1rem);
+  cursor: pointer;
+}
+
+/* =========================
+   PETITS ÉCRANS (OPTIONNEL)
+========================= */
+
+@media (max-width: 360px) {
+  body {
+    padding: 12px;
+  }
+
+  #refresh {
+    right: -40px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}

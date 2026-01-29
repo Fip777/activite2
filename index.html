@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activités</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- PAGE D’ACCUEIL -->
+  <section id="home">
+    <h1>Choisissez une activité</h1>
+
+	<div class="home-scroll">	
+    <div class="activity-list">
+      <button class="activity-card" data-activity="activite1">
+        <img src="assets/images/activite1.jpg" alt="Activité 1">
+        <span><b>ACTIVITE 1</b></span>
+      </button>
+
+      <button class="activity-card" data-activity="activite2">
+       <img src="assets/images/activite2.jpg" alt="Activité 2">
+        <span><b>ACTIVITE 2</b></span>
+      </button>
+	  
+	  <button class="activity-card" data-activity="activite3">
+        <img src="assets/images/activite3.jpg" alt="Activité 3">
+        <span><b>ACTIVITE 3</b></span>
+      </button>
+	  
+	  <button class="activity-card" data-activity="activite4">
+        <img src="assets/images/activite4.jpg" alt="Activité 4">
+        <span><b>ACTIVITE 4</b></span>
+      </button>
+	  
+	  <button class="activity-card" data-activity="activite5">
+        <img src="assets/images/activite5.jpg" alt="Activité 5">
+        <span><b> ACTIVITE 5</b></span>
+      </button>
+	  
+	  <button class="activity-card" data-activity="activite6">
+        <img src="assets/images/activite6.jpg" alt="Activité 6">
+        <span><b>ACTIVITE 6</b></span>
+      </button>
+	  
+	  <button class="activity-card" data-activity="activite7">
+        <img src="assets/images/activite7.jpg" alt="Activité 7">
+        <span><b>ACTIVITE 7</b></span>
+      </button>
+	  
+	  <button class="activity-card" data-activity="activite8">
+        <img src="assets/images/activite8.jpg" alt="Activité 8">
+        <span><b>ACTIVITE 8</b></span>
+      </button>
+      
+    </div>
+	</div>
+  </section>
+
+   <!-- PAGE ACTIVITÉ -->
+  <section id="activity" class="hidden">
+    <h2>Trouvez un maximum <br> de réponses</h2>
+
+    <div class="activity-wrapper">
+      <div class="card-container">
+        <div class="card">
+          <p id="instruction"></p>
+        </div>
+
+        <button id="refresh">🔄</button>
+      </div>
+    </div>
+
+    <button id="finish" type="button">Terminer</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
