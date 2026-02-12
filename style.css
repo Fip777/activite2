@@ -58,6 +58,13 @@ h2 {
   background: white;
   cursor: pointer;
   font-size: clamp(0.95rem, 4vw, 1rem);
+  color: black;
+  text-align: left;
+
+  /* reset iOS */
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .activity-card img {
@@ -80,7 +87,7 @@ h2 {
 .home-scroll {
   flex: 1;              /* prend tout l’espace restant */
   overflow-y: auto;     /* scroll uniquement ici */
-  padding-bottom: 20px;
+  padding-bottom: 80px; /* Espace bas page */
 }
 
 /* scroll fluide sur mobile */
@@ -99,6 +106,7 @@ h2 {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom)) /* évite zone système mobile */
 }
 
 /* Espace entre titre et carte */
@@ -108,9 +116,9 @@ h2 {
   align-items: center;        /* centrage vertical */
   justify-content: center;    /* centrage horizontal */
   position: relative;
-  gap: 20px;
   flex-direction: row-reverse; /* icône refresh à droite */
 }
+
 
 /* =========================
    CARTE RESPONSIVE
@@ -118,6 +126,7 @@ h2 {
 
 .card-container {
   position: relative;
+  padding-right: 50px; /* réserve l’espace pour l’icône */
 }
 
 .card {
@@ -165,7 +174,7 @@ h2 {
 #refresh {
   position: absolute;
   top: 50%;
-  right: -48px;              /* distance par rapport à la carte */
+  right: 0;              /* distance par rapport à la carte */
   transform: translateY(-50%);
   border: none;
   background: none;
@@ -188,6 +197,7 @@ h2 {
   color: white;
   font-size: clamp(0.95rem, 4vw, 1rem);
   cursor: pointer;
+  margin-bottom: 20px; /* espace après le bouton */
 }
 
 /* =========================
