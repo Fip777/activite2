@@ -115,9 +115,7 @@ h2 {
   display: flex;
   align-items: center;        /* centrage vertical */
   justify-content: center;    /* centrage horizontal */
-  position: relative;
-  flex-direction: row-reverse; /* icône refresh à droite */
-}
+  }
 
 
 /* =========================
@@ -126,19 +124,20 @@ h2 {
 
 .card-container {
   position: relative;
-  padding-right: 50px; /* réserve l’espace pour l’icône */
-}
+  }
 
+/* Carte */
 .card {
-  width: min(80vw, 240px);   /* responsive largeur */
-  height: min(65vh, 320px);  /* responsive hauteur */
+  width: min(80vw, 240px);
+  height: min(65vh, 320px);
   background: white;
   border-radius: 20px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 
   display: flex;
-  align-items: center;
+  flex-direction: column;      /* IMPORTANT */
   justify-content: center;
+  align-items: center;
 
   padding: 20px;
   text-align: center;
@@ -146,8 +145,10 @@ h2 {
   font-size: clamp(1rem, 4vw, 1.2rem);
 }
 
+/* Texte */
 .card p {
-  line-height: 1.5; /* interligne amélioré */
+  line-height: 1.5;
+  margin-bottom: 20px; /* espace avec le bouton */
 }
 
 /* =========================
@@ -171,17 +172,25 @@ h2 {
    BOUTON REFRESH
 ========================= */
 
+/* Bouton refresh DANS la carte */
+
 #refresh {
-  position: absolute;
-  top: 50%;
-  right: 0;              /* distance par rapport à la carte */
-  transform: translateY(-50%);
   border: none;
   background: none;
-  font-size: 24px;
+  padding: 0;
+  margin-top: 16px;
   cursor: pointer;
-  color: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+/* léger effet tactile discret */
+#refresh:active {
+  transform: scale(0.9);
+}
+
 
 /* =========================
    BOUTON TERMINÉ
