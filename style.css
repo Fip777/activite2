@@ -4,6 +4,41 @@
 }
 
 /* =========================
+   BARRE HAUT DE PAGE
+========================= */
+
+.top-bar {
+    display: flex;                 /* aligne les éléments horizontalement */
+    align-items: center;           /* centre verticalement */
+    justify-content: center;       /* centre horizontalement le contenu */
+    padding: 0px;            	  /* gauche/droite */
+	Padding-top: 0px;     		  /* espace haut*/
+	Padding-bottom: 0px;		  /* espace bas*/
+    gap: 10px; 				     /* espace entre lignes et texte */
+}
+
+/* Lignes gauche et droite */
+.top-bar .line {
+    flex: 1;                       
+    height: 1px;                   /* épaisseur de la ligne */
+    background-color: #0d2a5c;     /* couleur du trait */
+}
+
+/* Lien central */
+.top-link {
+    text-decoration: none;         /* enlève soulignement */
+    color: #0d2a5c;                /* couleur texte */
+    font-weight: standard;         /* texte non gras */    
+    white-space: nowrap;           /* empêche retour à la ligne */
+    transition: 0.3s;
+}
+
+/* Effet au survol */
+.top-link:hover {
+    color: #0077cc;                /* couleur au survol */
+}
+
+/* =========================
    BASE GLOBALE RESPONSIVE
 ========================= */
 
@@ -43,8 +78,8 @@ h2 {
 .activity-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: 15px;  /* espace côté cadres */
+  gap: 15px;	/* espace entre cadres */
+  padding: 10px;  /* espace côté cadres */
   max-width: 400px;
   margin: 0 auto;
   padding-bottom: 40px;
@@ -55,9 +90,10 @@ h2 {
   align-items: center;
   gap: 20px;          /* espace image-activité */
   padding: 12px;      /* espace interne */
-  padding-left: 20px;  /* espace avant image */
+  padding-left: 15px;  /* espace avant image */
   border: none;
   border-radius: var(--radius);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* ombre autour cadre activite */
   background: white;
   cursor: pointer;
   font-size: clamp(0.95rem, 4vw, 1rem);
@@ -74,6 +110,7 @@ h2 {
   width: 60px;
   height: 60px;
   border-radius: 12px;
+  box-shadow: 6px 6px 6px rgba(0,0,0,0.1); /* ombre autour image */
 }
 
 #home {
@@ -84,7 +121,7 @@ h2 {
 
 #home h1 {
   flex-shrink: 0; /* le titre ne rétrécit pas */
-  margin-bottom: 12px; /* Espace sous titre */
+  margin-bottom: 17px; /* Espace sous titre */
 }
 
 .home-scroll {
@@ -114,7 +151,7 @@ h2 {
 
 /* Espace entre titre et carte */
 .activity-wrapper {
-  flex: 1;
+  flex: 0.8;
   display: flex;
   align-items: center;        /* centrage vertical */
   justify-content: center;    /* centrage horizontal */
@@ -136,15 +173,12 @@ h2 {
   background: white;
   border-radius: 20px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-
   display: flex;
   flex-direction: column;      /* IMPORTANT */
   justify-content: center;
   align-items: center;
-
   padding: 20px;
   text-align: center;
-
   font-size: clamp(1rem, 4vw, 1.2rem);
 }
 
@@ -212,6 +246,7 @@ h2 {
   border: none;
   border-radius: 999px;
   background: #0d2a5c; /* couleur bouton */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* ombre autour bouton */
   color: white;
   font-size: clamp(0.95rem, 4vw, 1rem);
   cursor: pointer;
@@ -234,5 +269,13 @@ h2 {
   .card {
     padding: 16px;
   }
-}
 
+.activity-list {
+  padding: 7px;  /* espace côté cadres */
+  }
+
+.activity-card {
+  gap: 15px;          /* espace image-activité */
+  padding-left: 15px;  /* espace avant image */
+  }
+}
